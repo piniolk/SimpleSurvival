@@ -5,7 +5,7 @@ using TMPro;
 
 public class InvName : MonoBehaviour {
     public TextMeshProUGUI textName;
-    string itemName;
+    public string itemName;
     PlayerInv playerInv;
     bool isOn = false;
 
@@ -33,6 +33,7 @@ public class InvName : MonoBehaviour {
         if (isOn) {
             textName.text = newName;
         }
+        //Debug.Log(this.itemName);
     }
 
     public string GetName() {
