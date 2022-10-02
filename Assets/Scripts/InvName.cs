@@ -5,6 +5,7 @@ using TMPro;
 
 public class InvName : MonoBehaviour {
     public TextMeshProUGUI textName;
+    public TextMeshProUGUI textcount;
     public string itemName;
     PlayerInv playerInv;
     bool isOn = false;
@@ -40,9 +41,13 @@ public class InvName : MonoBehaviour {
         return this.itemName;
     }
 
-    public void UpdateImage() {
-        //var sp = Resources.Load(path) as Sprite;
-        Sprite sp = Resources.Load("Assets/Resources/Sprites/Log") as Sprite;
-        this.GetComponent<SpriteRenderer>().sprite = sp;
+    public void UpdateImage(string pathName) {
+        var sp = Resources.Load(pathName, typeof(Sprite)) as Sprite;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = sp;
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(202, 197, 197, 1);
+    }
+
+    public void UpdateCount(int count) {
+        textcount.text = count.ToString();
     }
 }
