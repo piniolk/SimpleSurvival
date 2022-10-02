@@ -13,7 +13,7 @@ public class Recipe : ScriptableObject {
     public string CheckAgainstRecipe(string[] input) {
         for (int i = 0; i < 9; i++) { 
             if(input[i] != ingredients[i]) {
-
+                return null;
             }
         }
         return recipeName;

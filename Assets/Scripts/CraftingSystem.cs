@@ -8,11 +8,13 @@ public class CraftingSystem : MonoBehaviour {
     Dictionary<int, Recipe> validRecipes = new Dictionary<int, Recipe>();
     
     public void CheckRecipes() {
+        string recipeName;
         if (validRecipes.Count > 0) {
             foreach(Recipe recipe in validRecipes.Values) {
-                recipe.CheckAgainstRecipe(craftingSlotNames);
+                recipeName = recipe.CheckAgainstRecipe(craftingSlotNames);
             }
         }
+        //display crafting result
     }
 
 
